@@ -1,0 +1,101 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+@layer base {
+  :root {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
+
+    --primary: 210 100% 66%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 259 59% 59%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 215 27% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 259 59% 59%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 27% 17%;
+    --input: 215 27% 17%;
+    --ring: 263 47% 52%;
+
+    --radius: 0;
+
+    --sidebar-background: 224 71% 4%;
+    --sidebar-foreground: 213 31% 91%;
+    --sidebar-primary: 210 100% 66%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 259 59% 59%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 215 27% 17%;
+    --sidebar-ring: 263 47% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-pixel-dark text-pixel-white font-pixelated;
+    image-rendering: pixelated;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-pixel;
+  }
+}
+
+@layer components {
+  .pixel-box {
+    @apply border-4 border-pixel-darkGray p-4 bg-pixel-dark relative;
+    box-shadow: 4px 4px 0 theme('colors.pixel.darkGray');
+  }
+  
+  .pixel-btn {
+    @apply px-4 py-2 bg-pixel-blue border-b-4 border-r-4 border-pixel-darkBlue 
+    text-pixel-white font-pixel text-sm inline-block no-underline 
+    transition-transform duration-100 active:translate-y-1 active:border-b-2 active:border-r-2;
+  }
+  
+  .pixel-card {
+    @apply bg-pixel-darkGray border-4 border-pixel-gray p-4;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .pixel-separator {
+    height: 4px;
+    background: repeating-linear-gradient(
+      90deg,
+      theme('colors.pixel.darkGray'),
+      theme('colors.pixel.darkGray') 6px,
+      transparent 6px,
+      transparent 12px
+    );
+  }
+  
+  .pixel-grid {
+    background-size: 16px 16px;
+    background-image: 
+      linear-gradient(to right, rgba(128, 128, 128, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(128, 128, 128, 0.1) 1px, transparent 1px);
+  }
+}
